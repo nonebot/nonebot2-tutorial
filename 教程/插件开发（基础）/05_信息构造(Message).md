@@ -43,8 +43,9 @@ async def handle_func(args: Message = CommandArg()):
 
 <!-- TODO: 这里需要补充协议适配器部分的地址 -->
 
->Warning
+::: warning
 在使用 `MessageSegment` 前，请务必先导入对应的协议适配器中的 `MessageSegment`，并查询其文档获得其支持的工厂方法及使用方法。
+:::
 
 `MessageSegment` 的用法也十分简单，即为 `MessageSegment.func(arg)` ，例如：
 
@@ -57,8 +58,9 @@ MessageSegment.image('image.jpg')
 
 ## 进阶使用
 
->Warning
+::: tips
 下列使用方法并不属于 `Message` 或 `MessageSegment` 的最基础的应用，如果您无法理解其内容，可以直接跳过下文。
+:::
 
 ### 使用消息序列
 
@@ -121,8 +123,9 @@ parse_obj_as(
 ) == Message([MessageSegment.text("text"), MessageSegment.text("text")])
 ```
 
->Warning
+::: warning
 以上示例中的字典数据仅做参考，具体的数据格式由适配器自行定义。
+:::
 
 ### 获取消息纯文本
 
@@ -250,8 +253,9 @@ msg.extend([MessageSegment.text("text")])
 
 这里给出几个简单的例子:
 
->Warning
+::: warning
 这里面所有的 `Message` 均是用对应的[协议适配器](<!-- TODO: 补充链接 -->)实现导入的, 而不是抽象基类
+:::
 
 ```python title="基础格式化用法"
 >>> Message.template("{} {}").format("hello", "world")
