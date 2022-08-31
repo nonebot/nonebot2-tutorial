@@ -9,8 +9,8 @@
 ```python
 from nonebot import get_bot
 
-bot = get_bot() # 获取bot列表中的第一个 bot
-bot = get_bot("bot_id") # 获取id为 bot_id 的bot
+bot = get_bot()  # 获取bot列表中的第一个 bot
+bot = get_bot("bot_id")  # 获取id为 bot_id 的bot
 ```
 
 ## 调用API
