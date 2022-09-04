@@ -38,34 +38,39 @@ async def handle_func(args: Message = CommandArg()):
 
 如上方示例所示，`Message` 可以将 `str` 类型的信息转化为 `Message` 类型的信息，并进行拼接操作。
 
-`Message` 不仅可以拼接 `Message` 类型的消息，也可以对 `str` 和下文即将提到的 `MessageSegment` 进行拼接。
+`Message` 不仅可以拼接 `Message` 类型的消息，也可以对 `str` 和下文即将提到的 `MessageSegment` 进行拼接，也可以对由其他适配器提供的特殊消息段进行拼接。
 
 ### MessageSegment
 
 不难发现，`Message` 的功能更多的在于消息序列层面，例如将多段消息进行拼接、排序、切片和模板化构造等功能。这些功能更加倾向于对多段消息的管理，而对于单段复杂消息的构建实际上起不到太大作用。而 `MessageSegment`(消息段)则是针对于 `Message` 中这一问题的解决方案。
 
-顾名思义，`MessageSegment` 是一段消息。由于 `Message` 的本质是由若干 `MessageSegment` 所组成的消息序列。简单来说就是 `Message` 类似于一个自然段，而 `MessageSegment` 则是组成自然段的一句话。也就是说 `MessageSegment` 可以被认为是构成 `Message` 的最小单位。同时，作为特殊消息载体的存在，`MessageSegment` 中绝大多数内容均需要由对应的[协议适配器](<!-- TODO: 这里需要补充协议适配器的文档链接 -->)所提供，以适应不同平台中的消息模式。**这也意味着，你需要导入对应的协议适配器中的 `MessageSegment` 后才能使用其特殊的工厂方法。**
+顾名思义，`MessageSegment` 是一段消息。由于 `Message` 的本质是由若干 `MessageSegment` 所组成的消息序列。简单来说就是 `Message` 类似于一个自然段，而 `MessageSegment` 则是组成自然段的一句话。也就是说 `MessageSegment` 可以被认为是构成 `Message` 的最小单位。同时，作为特殊消息载体的存在，`MessageSegment` 在 NoneBot2 的抽象基类中仅实现了 `text` 一种消息类型，而绝大多数的平台都有着 **独特的消息类型**，这些独特的内容均需要由对应的[协议适配器](<!-- TODO: 这里需要补充协议适配器的文档链接 -->)所提供，以适应不同平台中的消息模式。**这也意味着，你需要导入对应的协议适配器中的 `MessageSegment` 后才能使用其特殊的工厂方法。**
 
 <!-- TODO: 这里需要补充协议适配器部分的地址 -->
 
+简单来说，`MessageSegment` 是用于快速构造不同消息种类的工具，而 `MessageSegment` 在 NoneBot2 自身中仅包含了 `text` 一类消息类型，更多的消息类型可由对应的[协议适配器](<!-- TODO: 这里需要补充协议适配器的文档链接 -->)所提供。
+
 ::: warning
-在使用 `MessageSegment` 前，请务必先导入对应的协议适配器中的 `MessageSegment`，并查询其文档获得其支持的工厂方法及使用方法。
+在使用 `MessageSegment` 的 **平台特殊方法** 前，请务必先导入 **对应的协议适配器** 中的 `MessageSegment` 实现，并查询其文档获得其支持的特殊的工厂方法及使用方法。
 :::
 
 `MessageSegment` 的用法也十分简单，即为 `MessageSegment.func(arg)` ，例如：
 
 ```python
-MessageSegment.text('hello world')
-MessageSegment.image('image.jpg')
+from nonebot.adapters import MessageSegment
+
+MessageSegment.text("hello world")
 ```
 
-对于 `MessageSegment` 的具体用法，请参考对应的协议适配器的文档。
+对于 `MessageSegment` 的**平台特殊方法**，请参考对应的协议适配器的文档。
 
 ## 进阶使用
 
 ::: tips
 下列使用方法并不属于 `Message` 或 `MessageSegment` 的最基础的应用，如果您无法理解其内容，可以直接跳过下文。
 :::
+
+与上文相同，`Message` 与 `MessageSegment` 在抽象基类中的实现十分有限，对于不同的平台中的**平台特殊方法**，请参考对应的协议适配器的文档。
 
 ### 使用消息序列
 
