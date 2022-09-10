@@ -1,3 +1,8 @@
+---
+sidebar_position: 0
+description: 00_概览
+---
+
 # 插件入门
 
 插件(`Plugin`)是 NoneBot2 中实现具体功能的最小单位，也是用户对事件进行处理的基础单位。
@@ -53,6 +58,6 @@ async def echo_escape(message: Message = CommandArg()):
     await echo.send(message=message)
 ```
 
-在[配置项](../插件开发（高级）/配置项.md)中存在 `COMMAND_START=["/", "!!"]` 的情况下，我们私聊机器人可见：
+在[配置项](../plugin-advance/配置项.md)中存在 `COMMAND_START=["/", "!!"]` 的情况下，我们私聊机器人可见：
 
 <!-- TODO: 这里放个echo插件的示例图片 -->

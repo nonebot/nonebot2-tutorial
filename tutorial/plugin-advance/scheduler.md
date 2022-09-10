@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+description: 定时任务
+---
+
 # 定时任务
 
 [APScheduler](https://apscheduler.readthedocs.io/en/3.x/) 是一个Python第三方库，其强大的定时任务功能被广泛应用于各个场景。在 NoneBot2 中，定时任务作为一个额外功能，依赖于基于 APScheduler 开发的 [`nonebot_plugin_apscheduler`](https://github.com/nonebot/plugin-apscheduler) 插件进行支持。

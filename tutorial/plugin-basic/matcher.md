@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+description: 02_事件响应器
+---
+
 # 事件响应器
 
 事件响应器（`Matcher`）是对接收到的事件进行响应的基本单元，所有的事件响应器都继承自 `Matcher` 基类。

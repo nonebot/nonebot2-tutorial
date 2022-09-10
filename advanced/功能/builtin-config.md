@@ -1,3 +1,8 @@
+---
+sidebar_position: 0
+description: 内置配置项
+---
+
 # 内置配置项
 
 ::: warning

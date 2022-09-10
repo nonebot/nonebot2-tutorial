@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+description: 钩子函数
+---
+
 # 钩子函数
 
 [钩子编程](https://zh.wikipedia.org/wiki/%E9%92%A9%E5%AD%90%E7%BC%96%E7%A8%8B)

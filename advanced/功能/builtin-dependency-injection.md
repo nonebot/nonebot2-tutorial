@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+description: 内置依赖注入
+---
+
 # 内置依赖注入
 
 ::: warning

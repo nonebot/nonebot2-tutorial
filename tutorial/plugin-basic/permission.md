@@ -1,3 +1,8 @@
+---
+sidebar_position: 6
+description: 06_权限控制
+---
+
 # 权限控制
 
 **权限控制**是机器人在实际应用中需要解决的重点问题之一，NoneBot2 提供了灵活的权限控制机制——`Permission`。

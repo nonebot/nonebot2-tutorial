@@ -1,3 +1,8 @@
+---
+sidebar_position: 6
+description: 自定义API
+---
+
 # 自定义API
 
 由于 NoneBot2 可以使用 `ReverseDriver` （即服务端框架）来进行驱动，因此可以将 NoneBot2 来作为一个服务端程序来提供 API 接口等功能。
