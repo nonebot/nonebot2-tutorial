@@ -120,7 +120,7 @@ async def do_something():
     raise IgnoredException("reason")
 ```
 
-关于 `IgnoredException` 可参考[进阶 - 内置异常类型](../../进阶/功能/内置异常类型.md)了解更多信息。
+关于 `IgnoredException` 可参考[进阶 - 内置异常类型](../../advanced/functions/builtin-exception)了解更多信息。
 
 ### 事件预处理
 

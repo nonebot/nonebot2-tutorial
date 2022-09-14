@@ -7,7 +7,7 @@ description: 自定义API
 
 由于 NoneBot2 可以使用 `ReverseDriver` （即服务端框架）来进行驱动，因此可以将 NoneBot2 来作为一个服务端程序来提供 API 接口等功能。
 
-在扩展 API 之前，你首先需要确保 NoneBot2 使用的是 `ReverseDriver`，详情可以参考 [选择驱动器](./choose-driver.md)。下面我们以 FastAPI 驱动器为例，来演示如何添加自定义 API。
+在扩展 API 之前，你首先需要确保 NoneBot2 使用的是 `ReverseDriver`，详情可以参考 [选择驱动器](<!-- TODO: 这里需要补充驱动器的文档链接 -->)。下面我们以 FastAPI 驱动器为例，来演示如何添加自定义 API。
 
 ## 获取 APP 实例
 

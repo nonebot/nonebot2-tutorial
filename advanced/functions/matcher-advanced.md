@@ -1,12 +1,12 @@
 ---
 sidebar_position: 4
-description: 事件响应器及其辅助函数
+description: 事件响应器进阶
 ---
 
-# 事件响应器及其辅助函数
+# 事件响应器进阶
 
 ::: warning
-本章节为[事件响应器](../../教程/插件开发（基础）/02_事件响应器.md)的拓展内容，请务必在阅读并理解之后再阅读本节内容。
+本章节为[事件响应器](../../tutorial/plugin-basic/matcher.md)的拓展内容，请务必在阅读并理解之后再阅读本节内容。
 :::
 
 ## 事件响应器的参数
@@ -25,11 +25,11 @@ from nonebot import on_message
 on_message(rule=Rule(_checker))
 ```
 
-详情请参考[教程 - 自定义规则](../../教程/插件开发（高级）/自定义响应规则.md)。
+详情请参考[教程 - 自定义规则](../../tutorial/plugin-advance/rule.md)。
 
 #### 事件处理函数列表-handler
 
-事件处理函数列表是一个 `List[Union[T_Handler, Dependent]]` 对象，其中存放着该事件响应器的事件处理函数。通常我们会选择[事件响应器的依赖处理装饰器](../../教程/插件开发（基础）/03_事件处理流程.md#处理依赖)来添加依赖，而较少直接在事件响应器的注册阶段进行修改。
+事件处理函数列表是一个 `List[Union[T_Handler, Dependent]]` 对象，其中存放着该事件响应器的事件处理函数。通常我们会选择[事件响应器的依赖处理装饰器](../../tutorial/plugin-basic/handler.md#事件处理函数)来添加事件处理函数，而较少直接在事件响应器的注册阶段进行修改。
 
 #### 临时事件响应器-temp
 
@@ -88,7 +88,7 @@ from nonebot import on_message
 on_message(state={'key':'value'})
 ```
 
-详情请参考[进阶 - 依赖注入](内置依赖注入.md#State)。
+详情请参考[进阶 - 依赖注入](builtin-dependency-injection#State)。
 
 ### 特殊参数
 
@@ -117,7 +117,7 @@ from nonebot import on_message
 on_message(permission=SUPERUSER)
 ```
 
-详情请参考[教程 - 权限控制](../../教程/插件开发（基础）/06_权限控制.md)。
+详情请参考[教程 - 权限控制](../../tutorial/plugin-basic/permission)。
 
 #### msg
 
@@ -357,7 +357,7 @@ on_regex(r'^abc$', flags=1)
 
 注册一个消息事件响应器，并且当消息以指定命令开头时响应。
 
-根据配置里提供的 [`command_start`](配置项.md#command-start), [`command_sep`](配置项.md#command-separator) 判断消息是否为 `command`。
+根据配置里提供的 [`command_start`](builtin-config#command-start), [`command_sep`](builtin-config#command-separator) 判断消息是否为 `command`。
 
 可用参数：
 

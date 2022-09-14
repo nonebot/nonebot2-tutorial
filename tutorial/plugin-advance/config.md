@@ -60,7 +60,7 @@ CUSTOM_CONFIG_EMPTY_STR=
 CUSTOM_CONFIG_NONE
 ```
 
-其中包含的默认配置项可在[进阶 - 内置配置项](../../进阶/功能/内置配置项.md)中查看。
+其中包含的默认配置项可在[进阶 - 内置配置项](../../advanced/functions/builtin-config.md)中查看。
 
 如果配置项值无法被解析为 JSON 元素（例如 `HOST=0.0.0.0`）将作为**字符串**处理。如果配置项取值为空（例如 `CUSTOM_CONFIG_EMPTY_STR=`）会被解析为**空字符串**。如果配置项没有取值（例如 `CUSTOM_CONFIG_NONE`）则会被解析为**空值**。
 

@@ -115,4 +115,4 @@ nonebot.load_builtin_plugin("echo")
 
 ### 其他加载方式
 
-有关其他插件加载的方式，可参考 [跨插件访问](../插件开发（高级）/跨插件访问.md) 和 [嵌套插件](../插件开发（高级）/嵌套插件.md)。
+有关其他插件加载的方式，可参考 [跨插件访问](../plugin-advance/require.md) 和 [嵌套插件](../plugin-advance/nested-plugin.md))。

@@ -79,7 +79,7 @@ MessageSegment.text("hello world")
 
 ### 使用消息序列
 
-通常情况下，适配器在接收到消息时，会将消息转换为消息序列，可以通过 [`EventMessage`](../../进阶/功能/内置依赖注入.md#eventmessage) 作为依赖注入, 或者使用 `event.get_message()` 获取。
+通常情况下，适配器在接收到消息时，会将消息转换为消息序列，可以通过 [`EventMessage`](../../advanced/functions/builtin-dependency-injection#eventmessage) 作为依赖注入, 或者使用 `event.get_message()` 获取。
 
 由于它是`List[MessageSegment]`的子类, 所以你总是可以用和操作 List 类似的方式来处理消息序列
 

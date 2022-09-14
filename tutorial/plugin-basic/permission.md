@@ -9,7 +9,7 @@ description: 06_权限控制
 
 ## 基础使用
 
-`Permission` 是由非负整数个 `PermissionChecker` 所共同组成的 **用于筛选事件** 的对象。而相对于 [`Rule`](../插件开发（高级）/自定义响应规则.md) 而言，`Permission` 则更侧重于对于 **发起事件的用户** 的筛选，例如由 NoneBot2 自身提供的 `SUPERUSER`，便是筛选出会话发起者是否为超级用户。它们可以对输入的用户进行鉴别，如果符合要求则会被认为通过并返回 `True`，反之则返回 `False`。
+`Permission` 是由非负整数个 `PermissionChecker` 所共同组成的 **用于筛选事件** 的对象。而相对于 [`Rule`](../plugin-advance/rule) 而言，`Permission` 则更侧重于对于 **发起事件的用户** 的筛选，例如由 NoneBot2 自身提供的 `SUPERUSER`，便是筛选出会话发起者是否为超级用户。它们可以对输入的用户进行鉴别，如果符合要求则会被认为通过并返回 `True`，反之则返回 `False`。
 
 简单来说，`Permission` 是一个用于筛选出符合要求的用户的机制，可以通过 `Permission` 精确的控制响应对象的覆盖范围，从而拒绝掉我们所不希望的事件。
 
@@ -25,11 +25,7 @@ async def _():
     await matcher.send("超管命令测试成功")
 ```
 
-如上方示例所示，在注册事件响应器时，我们设置了 `permission` 参数，那么这个事件处理器在触发事件前的检查阶段会对用户身份进行验证，如果不符合我们设置的条件（此处即为 [`超级用户`](/进阶/功能/内置配置项.md#superusers)）则会响应失败。
-
-::: tips
-关于超级用户的定义，可以参考 [超级用户](../../进阶/功能/内置配置项.md#superusers)。
-:::
+如上方示例所示，在注册事件响应器时，我们设置了 `permission` 参数，那么这个事件处理器在触发事件前的检查阶段会对用户身份进行验证，如果不符合我们设置的条件（此处即为 [`超级用户`](../../advanced/functions/builtin-config#superusers)）则会响应失败。
 
 目前，NoneBot2 内置了 `SUPERUSER` 一个针对用户的 `Permission`，和 `METAEVENT` `REQUEST` `NOTICE` `MESSAGE` 四个针对事件类型的 `Permission`，同时也可由协议适配器或用户自行定义更多的权限，并对权限进行 `或运算`。
 
