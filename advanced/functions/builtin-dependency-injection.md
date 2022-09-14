@@ -1,7 +1,12 @@
+---
+sidebar_position: 1
+description: 内置依赖注入
+---
+
 # 内置依赖注入
 
 ::: warning
-本章节为[读取与自定义配置](../../教程/插件开发（基础）/04_获取信息.md)的拓展内容，请务必在阅读并理解之后再阅读本节内容。
+本章节为[读取与自定义配置](../../tutorial/plugin-basic/get-data)的拓展内容，请务必在阅读并理解之后再阅读本节内容。
 :::
 
 ## Bot
@@ -156,7 +161,7 @@ async def _(foo: str = CommandStart()): ...
 获取 shell 命令解析后的参数。
 
 ::: tips
-如果参数解析失败，则为 [`ParserExit`](../../api/exception.md#ParserExit) 异常，并携带错误码与错误信息。
+如果参数解析失败，则为 [`ParserExit`](builtin-exception#ParserExit) 异常，并携带错误码与错误信息。
 
 由于 `ArgumentParser` 在解析到 `--help` 参数时也会抛出异常，这种情况下错误码为 `0` 且错误信息即为帮助信息。
 :::

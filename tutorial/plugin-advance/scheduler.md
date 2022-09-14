@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+description: 定时任务
+---
+
 # 定时任务
 
 [APScheduler](https://apscheduler.readthedocs.io/en/3.x/) 是一个Python第三方库，其强大的定时任务功能被广泛应用于各个场景。在 NoneBot2 中，定时任务作为一个额外功能，依赖于基于 APScheduler 开发的 [`nonebot_plugin_apscheduler`](https://github.com/nonebot/plugin-apscheduler) 插件进行支持。
@@ -23,7 +28,7 @@ pip install nonebot-plugin-apscheduler
 
 ### 导入 scheduler 对象
 
-由于 `nonebot_plugin_apscheduler` 作为插件，引起需要在使用前对其进行**加载**并**调用**其中的 `scheduler` 对象来创建定时任务。使用 `require` 方法可轻松完成这一过程。可参考 [跨插件访问](跨插件访问.md) 一节进行了解。
+由于 `nonebot_plugin_apscheduler` 作为插件，引起需要在使用前对其进行**加载**并**调用**其中的 `scheduler` 对象来创建定时任务。使用 `require` 方法可轻松完成这一过程。可参考 [跨插件访问](require) 一节进行了解。
 
 首先我们先来演示一种较老的写法：
 
@@ -75,7 +80,7 @@ scheduler.add_job(
 ```
 
 ::: warning
-由 APScheduler 的定时任务并不是 **由事件响应器所触发的事件**，因此其处理函数无法同[事件处理依赖](../插件开发（基础）/03_事件处理流程.md#处理依赖)一样通过[依赖注入](../插件开发（基础）/04_获取信息.md#认识依赖注入)获取上下文信息，也无法通过事件响应器对象的方法进行任何操作，因此我们需要使用[调用平台API](调用平台API.md)的方式来获取信息或收发消息。
+由 APScheduler 的定时任务并不是 **由事件响应器所触发的事件**，因此其处理函数无法同[事件处理依赖](../plugin-basic/handler#事件处理函数)一样通过[依赖注入](../plugin-basic/get-data#认识依赖注入)获取上下文信息，也无法通过事件响应器对象的方法进行任何操作，因此我们需要使用[调用平台API](call-api)的方式来获取信息或收发消息。
 相对于事件处理依赖而言，编写定时任务更像是编写普通的函数，需要我们自行获取信息以及发送信息，请务必**不要**将事件处理依赖的特殊语法用于定时任务！
 :::
 

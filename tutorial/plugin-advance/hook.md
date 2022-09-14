@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+description: 钩子函数
+---
+
 # 钩子函数
 
 [钩子编程](https://zh.wikipedia.org/wiki/%E9%92%A9%E5%AD%90%E7%BC%96%E7%A8%8B)
@@ -115,7 +120,7 @@ async def do_something():
     raise IgnoredException("reason")
 ```
 
-关于 `IgnoredException` 可参考[进阶 - 内置异常类型](../../进阶/功能/内置异常类型.md)了解更多信息。
+关于 `IgnoredException` 可参考[进阶 - 内置异常类型](../../advanced/functions/builtin-exception)了解更多信息。
 
 ### 事件预处理
 

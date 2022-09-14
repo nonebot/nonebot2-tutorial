@@ -1,3 +1,8 @@
+---
+sidebar_position: 5
+description: 05_消息构造(Message)
+---
+
 # 消息构造
 
 在不同平台中，一条消息可能会有承载有各种不同的表现形式，它可能是一段纯文本、一张图片、一段语音、一篇富文本文章，也有可能是多种类型的组合等等。
@@ -74,7 +79,7 @@ MessageSegment.text("hello world")
 
 ### 使用消息序列
 
-通常情况下，适配器在接收到消息时，会将消息转换为消息序列，可以通过 [`EventMessage`](../../进阶/功能/内置依赖注入.md#eventmessage) 作为依赖注入, 或者使用 `event.get_message()` 获取。
+通常情况下，适配器在接收到消息时，会将消息转换为消息序列，可以通过 [`EventMessage`](../../advanced/functions/builtin-dependency-injection#eventmessage) 作为依赖注入, 或者使用 `event.get_message()` 获取。
 
 由于它是`List[MessageSegment]`的子类, 所以你总是可以用和操作 List 类似的方式来处理消息序列
 

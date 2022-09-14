@@ -1,8 +1,13 @@
+---
+sidebar_position: 5
+description: 自定义响应规则
+---
+
 # 自定义响应规则
 
 机器人在实际应用中，往往会接收到多种多样的事件类型，NoneBot2 提供了可自定义的响应规则 ── `Rule`。
 
-在 [进阶 - 事件响应器及辅助函数](../../进阶/功能/事件响应器及辅助函数.md#事件响应规则-rule) 中，我们提到了响应规则是一个 `Rule` 对象。类似于 `Message` 与 `MessageSegement` 的关系，`Rule` 也有自己的子项 `RuleChecker`。
+在 [进阶 - 事件响应器及辅助函数](../../advanced/functions/matcher-advanced.md#事件响应规则-rule) 中，我们提到了响应规则是一个 `Rule` 对象。类似于 `Message` 与 `MessageSegement` 的关系，`Rule` 也有自己的子项 `RuleChecker`。
 
 ## `RuleChecker`
 

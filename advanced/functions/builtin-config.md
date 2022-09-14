@@ -1,7 +1,12 @@
+---
+sidebar_position: 0
+description: 内置配置项
+---
+
 # 内置配置项
 
 ::: warning
-本章节为[配置项](../../教程/插件开发（高级）/配置项.md)的拓展内容，请务必在阅读并理解之后再阅读本节内容。
+本章节为[配置项](../../tutorial/plugin-advance/config)的拓展内容，请务必在阅读并理解之后再阅读本节内容。
 :::
 
 ## Driver
