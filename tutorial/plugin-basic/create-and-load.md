@@ -5,13 +5,56 @@ description: 01_创建并加载插件
 
 # 创建并加载插件
 
-## 创建插件
+## 插件结构
 
-在[插件入门](overview.md#插件结构)中，我们介绍了插件的基本格式——模块插件与包插件。那么创建插件自然也就是创建一个符合以上两种格式的插件即可。
+在正式编写插件之前，首先我们需要了解一下插件的概念。
 
-同样，我们也可以使用 nb-cli 来方便快捷的创建一个插件。
+在 NoneBot2 中，插件可以是 Python 的一个[模块](https://docs.python.org/zh-cn/3/tutorial/modules.html) `module`，也可以是一个[包](https://docs.python.org/zh-cn/3/tutorial/modules.html#packages) `package` 。NoneBot2 会在导入时对这些模块或包做一些特殊的处理使得他们成为一个插件。插件间应尽量减少耦合，可以进行有限制的插件间调用，NoneBot2 能够正确解析插件间的依赖关系。
 
-<!-- TODO: 补充 nb-cli 创建插件的方法 -->
+### 模块插件（单文件形式）
+
+一个 `.py` 文件即可被称为模块插件了，例如：
+
+```tree title=Project
+📂 plugins
+└── 📜 foo.py
+```
+
+这个时候 `foo.py` 已经可以被称为一个插件了，尽管它还什么都没做。
+
+### 包插件（文件夹形式）
+
+一个包含了 `__init__.py` 文件的文件夹即可被称为包插件了，例如：
+
+```tree title=Project
+📂 plugins
+└── 📂 foo
+    └── 📜 __init__.py
+```
+
+这个时候 `foo` 就是一个合法的 Python 包了，同时也是合法的 NoneBot2 插件，插件内容可以在 `__init__.py` 中编写。
+
+## 插件示例
+
+这里我们将展示 NoneBot2 内置插件 `echo` 的内容以及其实际效果：
+
+```python title=echo.py
+from nonebot.rule import to_me
+from nonebot.adapters import Message
+from nonebot.params import CommandArg
+from nonebot.plugin import on_command
+
+echo = on_command("echo", to_me())
+
+
+@echo.handle()
+async def echo_escape(message: Message = CommandArg()):
+    await echo.send(message=message)
+```
+
+在[配置项](../plugin-advance/config)中存在 `COMMAND_START=["/", "!!"]` 的情况下，我们私聊机器人可见：
+
+<!-- TODO: 这里放个echo插件的示例图片 -->
 
 ## 加载插件
 
