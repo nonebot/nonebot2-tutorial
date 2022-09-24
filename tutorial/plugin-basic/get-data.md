@@ -44,7 +44,7 @@ matcher = on_command("天气", priority=10)  # 注册事件响应器
 @matcher.handle()  # 为事件响应器添加一个处理函数
 async def handle_func(args: Message = CommandArg()):
     city = args.extract_plain_text()  # 获取用户发送的命令信息
-    if city in ["广州", "上海"]:  #
+    if city in ["广州", "上海"]:
         await matcher.finish(f"今天 {city} 的天气是...")
     else:
         await matcher.finish(f"您输入的城市 {city} 暂不支持查询，请重试...")
@@ -52,6 +52,6 @@ async def handle_func(args: Message = CommandArg()):
 
 如上方示例所示，我们使用了 `args` 作为变量名，获取了注入的 `CommandArg()`，也就是 `命令型消息命令后跟随的参数` 项。在这个示例中，我们获得的参数会被检查是否有效，对无效参数则会结束事件。
 
-<!-- TODO: 这里放个实例，演示带参数和不带参数两种情况 -->
+<!-- TODO: 这里放个组件，演示带参数和不带参数两种情况 -->
 
 目前 NoneBot2 共提供了多种可供注入的依赖，具体内容可参考 [进阶 - 内置依赖注入](../../advanced/functions/builtin-dependency-injection)。
